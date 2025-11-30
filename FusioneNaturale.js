@@ -4,6 +4,7 @@ function creaArray() {
         for (let i = 0; i < 20; i++) {
             array[i] = Math.floor(Math.random() * 100);
         }
+
     return array;
 }
 
@@ -31,6 +32,7 @@ function unisciArray() {
     let j = 0;
     let k = 0;
 
+    //Riordino l'array
     while (i < a1.length && j < a2.length) {
         if (a1[i] <= a2[j]) {
             arrayFinale[k] = a1[i];
@@ -42,6 +44,7 @@ function unisciArray() {
         k++;
     }
 
+    //Controllo eventuali elementi di arr1 e arr2
     while (i < a1.length) {
         arrayFinale[k] = a1[i];
         i++;
@@ -95,11 +98,14 @@ function htmlArray(arr1, arr2, arrayFinale) {
     div.appendChild(a2);
     div.appendChild(a3);
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-//Chiamare le funzioni
+
+//Chiamo le funzioni
 let arr1 = creaArray();
 let arr2 = creaArray();
 let arrayFinale = [];
+
 ordinaBubble(arr1);
 ordinaBubble(arr2);
 unisciArray();
