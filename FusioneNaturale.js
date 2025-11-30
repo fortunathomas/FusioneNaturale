@@ -10,24 +10,25 @@ function creaArray() {
 
 //Funzione di riordinazione per ogni array singolarmente
 function ordinaBubble(array) {
-    let lngArray = array.length;
+    let lArr = array.length;
 
-    while (lngArray > 0) {
-        for (let i = 0; i < lngArray - 1; i++) {
+    while (lArr > 0) {
+        for (let i = 0; i < lArr - 1; i++) {
             if (array[i] > array[i + 1]) {
                 let nTemp = array[i];
                 array[i] = array[i + 1];
                 array[i + 1] = nTemp;
             }
         }
-        lngArray--;
+        
+        lArr--;
     }
 }
 
 //Funzione per unire gli array
 function unisciArray() {
-    let a1 = arr1;
-    let a2 = arr2;
+    let a1 = array1;
+    let a2 = array2;
     let i = 0;
     let j = 0;
     let k = 0;
@@ -44,7 +45,7 @@ function unisciArray() {
         k++;
     }
 
-    //Controllo eventuali elementi di arr1 e arr2
+    //Controllo eventuali elementi di array1 e array2
     while (i < a1.length) {
         arrayFinale[k] = a1[i];
         i++;
@@ -61,9 +62,9 @@ function unisciArray() {
 }
 
 //Funzione per stampare gli array nella console
-function stampaArray(arr1, arr2, arrayFinale) {
-    console.log("Primo array: " + arr1);
-    console.log("Secondo array: " + arr2);
+function stampaArray(array1, array2, arrayFinale) {
+    console.log("Primo array: " + array1);
+    console.log("Secondo array: " + array2);
     console.log("Array finale: " + arrayFinale);
 }
 
@@ -85,29 +86,30 @@ function formattato(array) {
 }
 
 //Funzione per inserire gli array nell'html
-function htmlArray(arr1, arr2, arrayFinale) {
+function htmlArray(array1, array2, arrayFinale) {
     let div = document.getElementById("array");
     let a1 = document.createElement("h3");
     let a2 = document.createElement("h3");
     let a3 = document.createElement("h3");
 
-    a1.innerText = 'Array 1:\n' + formattato(arr1);
-    a2.innerText = 'Array 2:\n' + formattato(arr2);
+    a1.innerText = 'Array 1:\n' + formattato(array1);
+    a2.innerText = 'Array 2:\n' + formattato(array2);
     a3.innerText = 'Array finale:\n' + formattato(arrayFinale);
     div.appendChild(a1);
     div.appendChild(a2);
     div.appendChild(a3);
 }
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
 //Chiamo le funzioni
-let arr1 = creaArray();
-let arr2 = creaArray();
+let array1 = creaArray();
+let array2 = creaArray();
 let arrayFinale = [];
 
-ordinaBubble(arr1);
-ordinaBubble(arr2);
+ordinaBubble(array1);
+ordinaBubble(array2);
 unisciArray();
-stampaArray(arr1, arr2, arrayFinale);
-htmlArray(arr1, arr2, arrayFinale);
+stampaArray(array1, array2, arrayFinale);
+htmlArray(array1, array2, arrayFinale);
