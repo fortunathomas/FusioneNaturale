@@ -1,26 +1,27 @@
-//Funzione per creare i 2 array
+let array1 = creaArray();
+let array2 = creaArray();
+let arrayFinale = [];
+
 function creaArray() {
     let array = [];
-        for (let i = 0; i < 20; i++) {
-            array[i] = Math.floor(Math.random() * 100);
-        }
+    for (let i = 0; i < 20; i++) {
+        array[i] = Math.floor(Math.random() * 100);
+    }
 
     return array;
 }
 
 //Funzione di riordinazione per ogni array singolarmente
 function ordinaBubble(array) {
-    let lArr = array.length;
-
+    let lArr = array.length-1;
     while (lArr > 0) {
-        for (let i = 0; i < lArr - 1; i++) {
+        for (let i = 0; i < lArr; i++) {
             if (array[i] > array[i + 1]) {
                 let nTemp = array[i];
                 array[i] = array[i + 1];
                 array[i + 1] = nTemp;
             }
         }
-        
         lArr--;
     }
 }
@@ -102,14 +103,13 @@ function htmlArray(array1, array2, arrayFinale) {
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-
 //Chiamo le funzioni
-let array1 = creaArray();
-let array2 = creaArray();
-let arrayFinale = [];
+function init() {
+    ordinaBubble(array1);
+    ordinaBubble(array2);
+    unisciArray();
+    stampaArray(array1, array2, arrayFinale);
+    htmlArray(array1, array2, arrayFinale);
+}
 
-ordinaBubble(array1);
-ordinaBubble(array2);
-unisciArray();
-stampaArray(array1, array2, arrayFinale);
-htmlArray(array1, array2, arrayFinale);
+window.addEventListener("DOMContentLoaded", init);
