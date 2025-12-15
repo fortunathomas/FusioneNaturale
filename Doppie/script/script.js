@@ -10,7 +10,7 @@ function init(string) {
 
 function controlloDoppie(string) {
     let doppie = 0;
-    for (let i = 0; i <= string.length -1; i++) {
+    for (let i = 0; i < string.length -1; i++) {
         if (string[i] === string[i + 1]) {
             doppie++;
         }
@@ -21,8 +21,8 @@ function controlloDoppie(string) {
 function controlloDittongo(string) {
     let dittongo = 0;
 
-    for (let i = 0; i <= string.length -1; i++) {
-        if (string[i].includes(vocali) && (string[i + 1].includes(vocali))) {
+    for (let i = 0; i < string.length -1; i++) {
+        if (vocali.includes(string[i]) && (vocali.includes(string[i +1]))) {
             dittongo++;
         }
     }
