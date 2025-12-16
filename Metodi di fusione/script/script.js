@@ -1,6 +1,4 @@
-let array1 = creaArray();
-let array2 = creaArray();
-let arrayFinale = [];
+let array = creaArray();
 
 function creaArray() {
     let array = [];
@@ -105,11 +103,8 @@ function htmlArray(array1, array2, arrayFinale) {
 
 //Chiamo le funzioni
 function init() {
-    ordinaBubble(array1);
-    ordinaBubble(array2);
-    unisciArray();
-    stampaArray(array1, array2, arrayFinale);
-    htmlArray(array1, array2, arrayFinale);
+    ordinaBubble(array);
+    htmlArray(array);
 }
 
 window.addEventListener("DOMContentLoaded", init);
